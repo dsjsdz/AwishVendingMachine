@@ -68,6 +68,8 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     // add gson
     implementation("com.google.code.gson:gson:2.10.1")
+    // flexbox
+    implementation("com.google.android.flexbox:flexbox:3.0.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

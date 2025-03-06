@@ -1,0 +1,14 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_checked="true">
+    <shape android:shape="rectangle">
+      <solid android:color="#2196F3"/> <!-- 选中时蓝色背景 -->
+      <corners android:radius="8dp"/>
+    </shape>
+  </item>
+  <item>
+    <shape android:shape="rectangle">
+      <solid android:color="#EEEEEE"/> <!-- 默认灰色背景 -->
+      <corners android:radius="8dp"/>
+    </shape>
+  </item>
+</selector>

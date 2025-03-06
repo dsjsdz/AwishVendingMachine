@@ -15,3 +15,9 @@ Therefore, you can refer to the project’s entry method to fix your existing pr
 ```bash
 ./gradlew assembleDebug
 ```
+
+## sync
+
+```bash
+./gradlew sync
+```

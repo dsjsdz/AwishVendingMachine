@@ -1,4 +1,4 @@
-package com.app.awish.vending.machine
+package com.app.awish
 
 import org.junit.Test
 
