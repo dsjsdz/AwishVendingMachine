@@ -1,0 +1,48 @@
+name: Awish Vending Machine
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Decode Keystore from base64
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > ${{ secrets.STORE_FILE }}
+
+      - name: Generate key.properties
+        run: |
+          echo "storePassword=${{ secrets.STORE_PASSWORD }}" > app/key.properties
+          echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> app/key.properties
+          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> app/key.properties
+          echo "storeFile=${{ secrets.STORE_FILE }}" >> app/key.properties
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: Clean project
+        run: ./gradlew clean
+
+      - name: Build release APK
+        run: ./gradlew assembleRelease
+
+      - name: Upload release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-apk
+          path: app/build/outputs/apk/release/app-release.apk
