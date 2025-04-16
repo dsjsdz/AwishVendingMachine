@@ -21,8 +21,8 @@ android {
         minSdk = 25
         targetSdk = 35
 
-        versionCode = 1     // Version code, an integer, must be incremented with each update.
-        versionName = "1.0.0" // Version name, displayed to the user.
+        versionCode = 2     // Version code, an integer, must be incremented with each update.
+        versionName = "1.1.0" // Version name, displayed to the user.
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
