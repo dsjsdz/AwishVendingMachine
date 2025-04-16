@@ -1,4 +1,4 @@
-name: Awish Vending Machine
+name: Awish Vending Machine CI
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -23,14 +22,17 @@ jobs:
 
       - name: Decode Keystore from base64
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > app/${{ secrets.STORE_FILE }}
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/${{ secrets.STORE_FILE }}
+          chmod 600 app/${{ secrets.STORE_FILE }}
 
       - name: Generate key.properties
         run: |
-          echo "storePassword=${{ secrets.STORE_PASSWORD }}" > app/key.properties
-          echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> app/key.properties
-          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> app/key.properties
-          echo "storeFile=${{ secrets.STORE_FILE }}" >> app/key.properties
+          cat > app/key.properties <<EOF
+          storePassword=${{ secrets.STORE_PASSWORD }}
+          keyPassword=${{ secrets.KEY_PASSWORD }}
+          keyAlias=${{ secrets.KEY_ALIAS }}
+          storeFile=${{ secrets.STORE_FILE }}
+          EOF
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
@@ -49,13 +51,16 @@ jobs:
           name: Release v${{ github.run_number }}
           draft: false
           prerelease: false
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload APK to GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: actions/upload-release-asset@v1
         with:
-          tag_name: v${{ github.run_number }}
-          files: app/build/outputs/apk/release/app-release.apk
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: app/build/outputs/apk/release/app-release.apk
+          asset_name: app-release-${{ github.run_number }}.apk
+          asset_content_type: application/vnd.android.package-archive
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
