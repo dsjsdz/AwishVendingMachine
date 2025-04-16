@@ -45,6 +45,13 @@ jobs:
           storeFile=${{ secrets.STORE_FILE }}
           EOF
 
+      - name: Get version name from build.gradle.kts
+        id: version
+        run: |
+          VERSION_NAME=$(grep -oP 'versionName\s*=\s*"\K[^"]+' app/build.gradle.kts)
+          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
+          echo "::set-output name=name::$VERSION_NAME"
+
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
 
@@ -57,21 +64,20 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: "Release-${{steps.tag.outputs.tag}}"
-          asset_path: "app/build/outputs/apk/release/app-release.apk"
+          name: "app-release-v${{ env.VERSION_NAME }}"
+          path: "app/build/outputs/apk/release/app-release.apk"
           overwrite: true
           retention-days: 1
 
       - name: Create GitHub Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            This is the release for version ${{ github.ref }}.
+          tag_name: v${{ env.VERSION_NAME }}
+          name: Release v${{ env.VERSION_NAME }}
+          files: app/build/outputs/apk/release/app-release.apk
           draft: false
           prerelease: false
 
