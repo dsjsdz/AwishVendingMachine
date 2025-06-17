@@ -13,8 +13,8 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             when (requested.id.id) {
-                "com.android.library" -> useVersion("8.0.2")
-                "org.jetbrains.kotlin.android" -> useVersion("1.9.24")
+              "com.android.library" -> useVersion("8.0.2")
+              "org.jetbrains.kotlin.android" -> useVersion("2.0.0")
             }
         }
     }
@@ -24,6 +24,7 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
         google()
+        maven(url = "https://jitpack.io")
     }
 }
 
