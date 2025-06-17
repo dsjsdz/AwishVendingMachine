@@ -1,3 +1,54 @@
 <resources>
-    <string name="app_name">Awish Vending Machine</string>
+  <string name="app_name">鼎商售卖机</string>
+  <string name="nav_back">返回</string>
+  <string name="nav_splash">广告页</string>
+  <string name="to_homepage">进入主页</string>
+  <string name="countdown">倒计时 %1$ds</string>
+  <string name="model">设备型号</string>
+  <string name="manufacturer">制造商</string>
+  <string name="platform">运行环境</string>
+  <string name="release_version">系统版本</string>
+  <string name="sdk_version">API 级别</string>
+  <string name="version_name">App 版本</string>
+  <string name="technical_support">技术支持</string>
+  <string name="contacts">蒋乐 / 18122205556</string>
+  <string name="follow_us">微信扫一扫，关注我们</string>
+  <string name="nav_about">关于</string>
+  <string name="spring_motor">弹簧电机</string>
+  <string name="electromagnetic">电磁锁</string>
+  <string name="caterpillar">履带</string>
+  <string name="select_addr">选择板卡地址</string>
+  <string name="btn_confirm">确  认</string>
+  <string name="query_box_status">格子柜状态查询</string>
+  <string name="channel_slot">货道号</string>
+  <string name="select_channel">选择货道号</string>
+  <string name="select_floor_type">请选择出货方式</string>
+  <string name="label_select">请选择</string>
+  <string name="select_serial_path">选择串口地址</string>
+  <string name="btn_open_serial">打开串口</string>
+  <string name="btn_close_serial">关闭串口</string>
+  <string name="serial_path">串口地址</string>
+  <string name="loading">加载中…</string>
+  <string name="floor_type">出货方式</string>
+  <string name="is_dc">掉货检测</string>
+  <string name="is_lp">启用升降平台</string>
+  <string name="status_on">开启</string>
+  <string name="status_off">关闭</string>
+  <string name="btn_cancel">取 消</string>
+  <string name="config_note_after_release">注意：以下配置仅引导开发者如何使用，在APP上线后请固定参数配置。</string>
+  <string name="please_close_serial_port_first">请先关闭串口</string>
+  <string name="takes_effect_after_saving">保存后生效</string>
+  <string name="serial_port_closed_successfully">成功关闭串口</string>
+  <string name="close_serial_port">关闭串口</string>
+  <string name="query_result">查询结果</string>
+  <string name="query_dispensing_status_failed">查询出货状态失败，请检查</string>
+  <string name="initiate_dispensing">发起出货</string>
+  <string name="dispensing_initiated_successfully">发起出货成功</string>
+  <string name="serial_port_not_open_please_configure">串口未打开，请先配置</string>
+  <string name="product_7up_summer_lemon_soda">七喜(7 Up) 夏日冰凉-柠檬味汽水</string>
+  <string name="sugar_free_hydration_tip">
+    0 糖和 10 种或更少的卡路里 – 这些饮料混合物不含糖,提供美味的方式来保持水分,同时减少家庭饮食中的含糖饮料。 代替含糖果汁,喝调味水。 将7-UP加入您的SodaStream中,而不是含糖苏打水。
+</string>
+  <string name="initiate_dispensing_failed_check_config">发起出货失败，请检查配置</string>
+  <string name="buy">购买</string>
 </resources>
