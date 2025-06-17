@@ -1,8 +1,4 @@
-# This project is for learning purposes only. 
-
-The project may not compile properly, and there are missing necessary ignore files. 
-
-Therefore, you can refer to the project’s entry method to fix your existing project.
+# Awish Vending Machine App Demo
 
 ## Manually fetch dependencies
 
@@ -21,3 +17,7 @@ Therefore, you can refer to the project’s entry method to fix your existing pr
 ```bash
 ./gradlew sync
 ```
+
+## screenshot
+
+![image](./screenshots/main.png)

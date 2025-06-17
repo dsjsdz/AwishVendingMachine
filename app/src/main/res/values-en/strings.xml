@@ -1,0 +1,54 @@
+<resources>
+  <string name="app_name">Awish Machine</string>
+  <string name="nav_back">Back</string>
+  <string name="nav_splash">Splash</string>
+  <string name="to_homepage">To Homepage</string>
+  <string name="countdown">Countdown %1$ds</string>
+  <string name="model">Model No</string>
+  <string name="manufacturer">Manufacturer</string>
+  <string name="platform">Platform</string>
+  <string name="release_version">Release Version</string>
+  <string name="sdk_version">API Version</string>
+  <string name="version_name">APP Version</string>
+  <string name="technical_support">Technical Support</string>
+  <string name="contacts">Le Jiang / 18122205556</string>
+  <string name="follow_us">Scan with WeChat to follow us</string>
+  <string name="nav_about">About</string>
+  <string name="spring_motor">Spring Motor</string>
+  <string name="electromagnetic">Electromagnetic</string>
+  <string name="caterpillar">Caterpillar</string>
+  <string name="select_addr">Board Addr</string>
+  <string name="btn_confirm">Confirm</string>
+  <string name="query_box_status">Query Box Status</string>
+  <string name="channel_slot">Channel Slot</string>
+  <string name="select_channel">Select Channel</string>
+  <string name="select_floor_type">Select Floor Type</string>
+  <string name="label_select">Please Select</string>
+  <string name="select_serial_path">Select Serial Path</string>
+  <string name="btn_open_serial">Open Serial Port</string>
+  <string name="btn_close_serial">Close Serial Port</string>
+  <string name="serial_path">Serial Path</string>
+  <string name="loading">Loading…</string>
+  <string name="floor_type">Floor Type</string>
+  <string name="is_dc">Drop Detection</string>
+  <string name="is_lp">Enable Lift Platform</string>
+  <string name="status_on">On</string>
+  <string name="status_off">Off</string>
+  <string name="btn_cancel">Cancel</string>
+  <string name="config_note_after_release">The following configuration is intended to guide developers during implementation. Please ensure that the parameters are fixed and not modified after the app goes live.</string>
+  <string name="please_close_serial_port_first">Please close the serial port first.</string>
+  <string name="takes_effect_after_saving">Save</string>
+  <string name="serial_port_closed_successfully">Serial port closed successfully.</string>
+  <string name="close_serial_port">Close</string>
+  <string name="query_result">Query Result</string>
+  <string name="query_dispensing_status_failed">Failed to query the dispensing status. Please check.</string>
+  <string name="initiate_dispensing">Initiate Dispensing</string>
+  <string name="dispensing_initiated_successfully">Dispensing initiated successfully</string>
+  <string name="serial_port_not_open_please_configure">Serial port is not open. Please configure it first.</string>
+  <string name="product_7up_summer_lemon_soda">7 Up Summer Chill - Lemon Flavored Soda</string>
+  <string name="sugar_free_hydration_tip">
+    0 sugar and 10 calories or fewer – these drink mixes are sugar-free and offer a tasty way to stay hydrated while cutting down on sugary beverages at home. Swap sugary juice for flavored water. Add 7-UP to your SodaStream instead of sugary soda.
+</string>
+  <string name="initiate_dispensing_failed_check_config">Failed to initiate dispensing. Please check the configuration.</string>
+  <string name="buy">Buy</string>
+</resources>
